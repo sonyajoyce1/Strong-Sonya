@@ -1,2 +1,2 @@
 Strong Sonya Version 1.0
-Built: 2026-08-01
+Release build: 2026-08-01

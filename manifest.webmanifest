@@ -1,1 +1,26 @@
-{"name":"Strong Sonya","short_name":"Strong Sonya","start_url":"./index.html","display":"standalone","background_color":"#fff7fb","theme_color":"#ec4899","icons":[{"src":"icon-192.png","sizes":"192x192","type":"image/svg+xml"},{"src":"icon-512.png","sizes":"512x512","type":"image/svg+xml"}]}
+{
+  "name": "Strong Sonya",
+  "short_name": "Strong Sonya",
+  "description": "A private, phone-friendly strength and progress tracker for Sonya.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fff7fb",
+  "theme_color": "#ec4899",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

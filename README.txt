@@ -1,22 +1,37 @@
 STRONG SONYA — VERSION 1.0
 
+THIS IS THE FIRST REAL, INSTALLABLE RELEASE
+It is designed to be used now and improved later without changing your GitHub Pages address.
+
 UPLOAD TO GITHUB
-1. Upload every file in this folder to the ROOT of your Strong-Sonya repository.
-2. In repository Settings > Pages, choose Deploy from a branch.
-3. Choose main and /(root), then Save.
-4. Open the published address in Safari.
-5. Tap Share > Add to Home Screen.
+1. Open your Strong-Sonya repository.
+2. Upload every file INSIDE this folder to the repository root.
+3. Commit the upload.
+4. Open Settings > Pages.
+5. Under Build and deployment choose Deploy from a branch.
+6. Choose main and /(root), then Save.
+7. Wait for GitHub to publish the site.
+8. Open the published link in Safari and choose Share > Add to Home Screen.
 
-INCLUDED
-- Pink and teal phone-friendly interface
-- 24-week, three-day-per-week strength program
-- Editable workouts and external quick-demo links
-- Previous weights, workout logging, coaching prompts, and rest-friendly layout
-- Weight and body-measurement tracking
+VERSION 1 FEATURES
+- Pink-and-teal iPhone-friendly design
+- 24-week, three-day-per-week full-body strength program
+- Editable exercises, sets, rep targets, and loads
+- External quick-demo links from original providers
+- Previous weight history and progression guidance
+- Workout logging, notes, and personal records
+- Weight and full-body measurement check-ins
+- Progress trend graph
 - Progress photos stored privately on the device
-- XP, badges, Victory Wall, and progress graph
-- Data export/import backup
-- Offline support after first successful load
+- XP, badges, Victory Wall, and confetti
+- Data export and import
+- Offline support after the first successful load
 
-IMPORTANT
-Workout records and measurements are stored in the browser on the device. Progress photos are stored separately on the device and are not included in the JSON backup. Keep original photos in the iPhone Photos app.
+DATA AND PRIVACY
+- Workout records and measurements are saved in Safari storage on that device.
+- Photos are saved separately in the browser database on that device.
+- The JSON export backs up workout and measurement data, but not the photo files. Keep original photos in Apple Photos.
+- Clearing Safari website data can erase locally stored app information. Export your data periodically.
+
+SAFETY
+Use controlled movement and stop an exercise that causes sharp, radiating, or unusual pain. This app is a tracker, not medical care.
