@@ -1,37 +1,36 @@
-STRONG SONYA — VERSION 1.0
-
-THIS IS THE FIRST REAL, INSTALLABLE RELEASE
-It is designed to be used now and improved later without changing your GitHub Pages address.
+STRONG SONYA — VERSION 1.1
 
 UPLOAD TO GITHUB
-1. Open your Strong-Sonya repository.
-2. Upload every file INSIDE this folder to the repository root.
-3. Commit the upload.
-4. Open Settings > Pages.
-5. Under Build and deployment choose Deploy from a branch.
-6. Choose main and /(root), then Save.
-7. Wait for GitHub to publish the site.
-8. Open the published link in Safari and choose Share > Add to Home Screen.
+1. First use the app's Plan > Backup > Export data button.
+2. Open your Strong-Sonya GitHub repository.
+3. Upload the replacement files from this package to the repository root.
+4. Choose Replace when GitHub says a file with the same name already exists.
+5. Commit the changes.
+6. Wait a few minutes for GitHub Pages to update.
+7. Open the site in Safari and refresh it. If the old version remains, close the installed app completely and reopen it.
 
-VERSION 1 FEATURES
-- Pink-and-teal iPhone-friendly design
-- 24-week, three-day-per-week full-body strength program
-- Editable exercises, sets, rep targets, and loads
-- External quick-demo links from original providers
-- Previous weight history and progression guidance
-- Workout logging, notes, and personal records
-- Weight and full-body measurement check-ins
-- Progress trend graph
-- Progress photos stored privately on the device
-- XP, badges, Victory Wall, and confetti
-- Data export and import
-- Offline support after the first successful load
+FILES TO REPLACE
+- index.html
+- app.js
+- styles.css
+- sw.js
+- VERSION.txt
+- README.txt
+
+VERSION 1.1 FEATURES
+- Full-width exercise names that do not get cut off
+- Video link on the second line and exercise instructions on the third line
+- Demonstration links that open a YouTube search for each exact exercise
+- Warm-ups before each workout
+- Progressive cardio after strength training
+- Biceps and triceps exercises in Workouts A, B, and C
+- Rest timer, exercise notes, PR indicator, streak tracking, and progression guidance
+- Existing weight, measurement, photo, workout, XP, and badge features
 
 DATA AND PRIVACY
-- Workout records and measurements are saved in Safari storage on that device.
-- Photos are saved separately in the browser database on that device.
-- The JSON export backs up workout and measurement data, but not the photo files. Keep original photos in Apple Photos.
-- Clearing Safari website data can erase locally stored app information. Export your data periodically.
+- This update uses the same browser-storage name as Version 1, so existing workout and measurement data should remain.
+- Export a backup before uploading the update as a precaution.
+- Photos remain in the browser database on the same device and are not included in JSON exports.
 
 SAFETY
-Use controlled movement and stop an exercise that causes sharp, radiating, or unusual pain. This app is a tracker, not medical care.
+Use controlled movement and stop an exercise that causes sharp, radiating, or unusual pain. Choose cardio equipment that feels comfortable for your joints. This app is a tracker, not medical care.

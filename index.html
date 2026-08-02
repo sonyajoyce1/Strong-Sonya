@@ -6,12 +6,12 @@
   <meta name="theme-color" content="#ec4899" />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="apple-touch-icon" href="icon-192.png" />
-  <title>Strong Sonya — Version 1</title>
+  <title>Strong Sonya — Version 1.1</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 <header class="topbar">
-  <div><p class="eyebrow">Version 1 · Your six-month strength journey</p><h1>Strong Sonya ✨</h1></div>
+  <div><p class="eyebrow">Version 1.1 · Your six-month strength journey</p><h1>Strong Sonya ✨</h1></div>
   <button id="installBtn" class="btn ghost" hidden>Install</button>
 </header>
 <nav class="tabs" aria-label="Main navigation">
@@ -32,7 +32,7 @@
     <article class="card metric"><span>Week</span><strong id="weekMetric">1</strong></article>
     <article class="card metric"><span>Workouts</span><strong id="workoutMetric">0</strong></article>
     <article class="card metric"><span>Current weight</span><strong id="weightMetric">226 lb</strong></article>
-    <article class="card metric"><span>XP</span><strong id="xpMetric">0</strong></article>
+    <article class="card metric"><span>Current streak</span><strong id="streakMetric">0 weeks</strong></article>
   </div>
   <article class="card">
     <div class="section-head"><h2 id="phaseTitle">Foundation</h2><span id="phaseWeeks" class="pill teal"></span></div>
@@ -51,65 +51,58 @@
   <article class="card">
     <div class="grid two"><label>Week<select id="weekSelect"></select></label><label>Workout<select id="workoutSelect"><option value="A">Workout A</option><option value="B">Workout B</option><option value="C">Workout C</option></select></label></div>
   </article>
+
+  <article class="card routine-card warmup-card">
+    <div class="routine-heading"><span class="routine-icon">🔥</span><div><h2>Warm-up · 5–8 minutes</h2><p>Easy pace. You should feel warmer, not tired.</p></div></div>
+    <div id="warmupList" class="routine-list"></div>
+  </article>
+
+  <div class="section-label">Strength training</div>
   <div id="exerciseList"></div>
+
+  <article class="card routine-card cardio-card">
+    <div class="routine-heading"><span class="routine-icon">❤️</span><div><h2>Cardio finisher</h2><p id="cardioSummary"></p></div></div>
+    <div id="cardioList" class="routine-list"></div>
+    <label>Cardio completed<input id="cardioMinutes" type="number" min="0" max="90" inputmode="numeric" placeholder="Minutes completed" /></label>
+  </article>
+
+  <article class="card rest-timer-card">
+    <div class="section-head"><div><h2>Rest timer</h2><p class="muted compact-text">Use 60–90 seconds between most sets.</p></div><strong id="timerDisplay" class="timer-display">01:00</strong></div>
+    <div class="timer-actions"><button class="btn ghost timer-preset" data-seconds="60">60 sec</button><button class="btn ghost timer-preset" data-seconds="90">90 sec</button><button id="timerToggle" class="btn primary">Start</button><button id="timerReset" class="btn ghost">Reset</button></div>
+  </article>
+
   <article class="card">
     <h2>Coach’s journal</h2>
     <label>How did today feel?<select id="sessionFeel"><option value="">Choose</option><option>Easy</option><option>Just right</option><option>Hard</option></select></label>
     <label>Biggest win today<input id="biggestWin" placeholder="Example: I used 10 lb more on leg press" /></label>
     <label>Anything to change?<textarea id="workoutNotes" rows="3" placeholder="Machine settings, discomfort, substitutions, or exercises you disliked"></textarea></label>
     <div class="grid two"><button id="addExerciseBtn" class="btn ghost">Add exercise</button><button id="finishWorkoutBtn" class="btn primary">Finish workout 🎉</button></div>
-    <p id="coachMessage" class="coach" aria-live="polite"></p>
+    <p id="coachMessage" class="coach" aria-live="polite">Complete your workout and I’ll give you a next-step suggestion.</p>
   </article>
 </section>
 
 <section id="progress" class="view">
-  <article class="card">
-    <h2>New check-in</h2>
-    <div class="grid two">
-      <label>Date<input id="progressDate" type="date" /></label><label>Weight (lb)<input id="progressWeight" type="number" step="0.1" /></label>
-      <label>Neck (in)<input id="mNeck" type="number" step="0.25" /></label><label>Chest (in)<input id="mChest" type="number" step="0.25" /></label>
-      <label>Waist (in)<input id="mWaist" type="number" step="0.25" /></label><label>Hips (in)<input id="mHips" type="number" step="0.25" /></label>
-      <label>Left arm (in)<input id="mLArm" type="number" step="0.25" /></label><label>Right arm (in)<input id="mRArm" type="number" step="0.25" /></label>
-      <label>Left thigh (in)<input id="mLThigh" type="number" step="0.25" /></label><label>Right thigh (in)<input id="mRThigh" type="number" step="0.25" /></label>
-      <label>Left calf (in)<input id="mLCalf" type="number" step="0.25" /></label><label>Right calf (in)<input id="mRCalf" type="number" step="0.25" /></label>
-    </div>
-    <button id="saveProgressBtn" class="btn primary full">Save check-in</button>
-  </article>
+  <article class="card"><h2>New check-in</h2><div class="grid two"><label>Date<input id="progressDate" type="date" /></label><label>Weight (lb)<input id="progressWeight" type="number" step="0.1" /></label><label>Neck (in)<input id="mNeck" type="number" step="0.25" /></label><label>Chest (in)<input id="mChest" type="number" step="0.25" /></label><label>Waist (in)<input id="mWaist" type="number" step="0.25" /></label><label>Hips (in)<input id="mHips" type="number" step="0.25" /></label><label>Left arm (in)<input id="mLArm" type="number" step="0.25" /></label><label>Right arm (in)<input id="mRArm" type="number" step="0.25" /></label><label>Left thigh (in)<input id="mLThigh" type="number" step="0.25" /></label><label>Right thigh (in)<input id="mRThigh" type="number" step="0.25" /></label><label>Left calf (in)<input id="mLCalf" type="number" step="0.25" /></label><label>Right calf (in)<input id="mRCalf" type="number" step="0.25" /></label></div><button id="saveProgressBtn" class="btn primary full">Save check-in</button></article>
   <article class="card"><div class="section-head"><h2>Weight trend</h2><span id="weightChange" class="pill teal">No data yet</span></div><canvas id="weightChart" height="190"></canvas></article>
   <article class="card"><h2>Recent check-ins</h2><div id="checkinList" class="history"></div></article>
   <article class="card"><h2>Strength highlights</h2><div id="strengthHighlights" class="history"></div></article>
 </section>
 
-<section id="photos" class="view">
-  <article class="card">
-    <h2>Add progress photos</h2><p class="muted">Photos stay on this device. Use the same lighting, clothing, and distance when possible.</p>
-    <div class="grid two"><label>Date<input id="photoDate" type="date" /></label><label>View<select id="photoView"><option>Front</option><option>Side</option><option>Back</option><option>Other</option></select></label></div>
-    <label class="upload">Choose photo<input id="photoInput" type="file" accept="image/*" /></label>
-    <button id="savePhotoBtn" class="btn primary full">Save photo 📸</button>
-  </article>
-  <article class="card"><div class="section-head"><h2>Photo gallery</h2><select id="photoFilter"><option>All</option><option>Front</option><option>Side</option><option>Back</option><option>Other</option></select></div><div id="photoGallery" class="photo-grid"></div></article>
-</section>
-
-<section id="achievements" class="view">
-  <article class="card"><h2>Achievement room 🏆</h2><p class="muted">Earn XP from workouts, personal records, phase completions, and consistency.</p><div class="xp-track"><div id="xpBar"></div></div><p id="xpText"></p></article>
-  <div id="badgeGrid" class="badge-grid"></div>
-  <article class="card"><h2>Victory Wall</h2><div id="victoryWall" class="history"></div></article>
-</section>
-
-<section id="plan" class="view">
-  <article class="card"><h2>Your six-month plan</h2><div id="phaseList" class="phase-list"></div></article>
-  <article class="card"><h2>Personal settings</h2><div class="grid two"><label>Current weight<input id="settingsWeight" type="number" step="0.1" /></label><label>Starting weight<input id="startingWeight" type="number" step="0.1" /></label></div><button id="saveSettingsBtn" class="btn ghost full">Save settings</button></article>
-  <article class="card"><h2>Backup</h2><p class="muted">Export regularly, especially before changing phones or clearing Safari data.</p><div class="grid two"><button id="exportBtn" class="btn ghost">Export data</button><label class="upload compact">Import data<input id="importInput" type="file" accept="application/json" /></label></div></article>
-</section>
+<section id="photos" class="view"><article class="card"><h2>Add progress photos</h2><p class="muted">Photos stay on this device. Use the same lighting, clothing, and distance when possible.</p><div class="grid two"><label>Date<input id="photoDate" type="date" /></label><label>View<select id="photoView"><option>Front</option><option>Side</option><option>Back</option><option>Other</option></select></label></div><label class="upload">Choose photo<input id="photoInput" type="file" accept="image/*" /></label><button id="savePhotoBtn" class="btn primary full">Save photo 📸</button></article><article class="card"><div class="section-head"><h2>Photo gallery</h2><select id="photoFilter"><option>All</option><option>Front</option><option>Side</option><option>Back</option><option>Other</option></select></div><div id="photoGallery" class="photo-grid"></div></article></section>
+<section id="achievements" class="view"><article class="card"><h2>Achievement room 🏆</h2><p class="muted">Earn XP from workouts, personal records, phase completions, and consistency.</p><div class="xp-track"><div id="xpBar"></div></div><p id="xpText"></p></article><div id="badgeGrid" class="badge-grid"></div><article class="card"><h2>Victory Wall</h2><div id="victoryWall" class="history"></div></article></section>
+<section id="plan" class="view"><article class="card"><h2>Your six-month plan</h2><div id="phaseList" class="phase-list"></div></article><article class="card"><h2>Personal settings</h2><div class="grid two"><label>Current weight<input id="settingsWeight" type="number" step="0.1" /></label><label>Starting weight<input id="startingWeight" type="number" step="0.1" /></label></div><button id="saveSettingsBtn" class="btn ghost full">Save settings</button></article><article class="card"><h2>Backup</h2><p class="muted">Export regularly, especially before changing phones or clearing Safari data.</p><div class="grid two"><button id="exportBtn" class="btn ghost">Export data</button><label class="upload compact">Import data<input id="importInput" type="file" accept="application/json" /></label></div></article></section>
 </main>
 
 <template id="exerciseTemplate">
 <article class="card exercise-card">
-  <div class="section-head"><input class="exercise-name" aria-label="Exercise name" /><a class="video-link btn mini" target="_blank" rel="noopener">Quick demo ▶</a></div>
+  <input class="exercise-name" aria-label="Exercise name" />
+  <a class="video-link" target="_blank" rel="noopener">Watch demonstration video ▶</a>
   <p class="exercise-tip"></p>
-  <div class="grid three"><label>Sets<input class="sets" type="number" min="1" /></label><label>Rep target<input class="rep-target" /></label><label>Weight<input class="load" type="number" min="0" step="2.5" /></label></div>
+  <div class="previous-line"></div>
+  <div class="grid three"><label>Sets<input class="sets" type="number" min="1" /></label><label>Rep target<input class="rep-target" /></label><label>Weight (lb)<input class="load" type="number" min="0" step="2.5" /></label></div>
   <div class="grid two"><label>Reps completed<input class="reps-done" placeholder="10, 10, 9" /></label><label>Difficulty<select class="difficulty"><option value="">Choose</option><option value="easy">Easy</option><option value="right">About right</option><option value="hard">Very hard</option></select></label></div>
-  <div class="section-head"><label class="check"><input class="completed" type="checkbox" /> Completed</label><button class="remove-btn text-btn" type="button">Remove</button></div>
+  <label>Exercise notes<input class="exercise-notes" placeholder="Seat setting, form cue, or substitution" /></label>
+  <div class="exercise-actions"><label class="check"><input class="completed" type="checkbox" /> Completed</label><span class="pr-badge" hidden>NEW PR ⭐</span><button class="remove-btn text-btn" type="button">Remove</button></div>
 </article>
 </template>
 <script src="app.js"></script>

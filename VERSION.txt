@@ -1,2 +1,14 @@
-Strong Sonya Version 1.0
-Release build: 2026-08-01
+Strong Sonya Version 1.1
+Release build: 2026-08-02
+
+NEW IN 1.1
+- Exercise name, video link, and instructions now display on separate lines
+- More reliable demonstration links using YouTube exercise searches
+- Warm-up section for Workouts A, B, and C
+- Progressive post-strength cardio plan for all 24 weeks
+- Direct biceps and triceps exercises in every workout
+- 60- and 90-second rest timer
+- Exercise notes, personal-record indicator, and clearer previous-performance display
+- Weekly workout streak
+- Improved iPhone spacing and touch targets
+- Existing Version 1 data remains in the same local storage record
